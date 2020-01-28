@@ -12,7 +12,7 @@ public class EmployeeTimeSheetsStepDefs extends DefaultStepsData {
     private EmployeeTimeSheetsSteps employeeTimeSheetsSteps;
 
     @When("I search by part of employee name $name")
-    public void searchEmployeeByPartName(String partName) {
+    public void searchEmployeeByPartName(String partName) throws InterruptedException {
         employeeTimeSheetsSteps.searchByEmployeeName(partName);
     }
 

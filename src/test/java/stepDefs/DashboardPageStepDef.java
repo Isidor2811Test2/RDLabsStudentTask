@@ -26,7 +26,7 @@ public class DashboardPageStepDef extends DefaultStepsData {
 
     //https://jbehave.org/reference/latest/aliases.html
 
-    @When("I click on hide menu button")
+    @When("I click on $hide menu button")
     public void whenClickOnTheHideMenuButton() {
         dashboardPageSteps.clickOnHideMenuButton();
     }
@@ -40,7 +40,7 @@ public class DashboardPageStepDef extends DefaultStepsData {
     }
 
     @When("I click on the three dots button inside $sectionName section")
-    public void clickiOnThreeDotsButton(String sectionName) {
+    public void clickOnThreeDotsButton(String sectionName) {
         dashboardPageSteps.expandContainerClickingOnThreeDots(sectionName);
     }
 

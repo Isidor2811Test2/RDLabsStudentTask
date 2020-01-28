@@ -23,8 +23,15 @@ public class DashboardPage extends BasePage {
     @FindBy(css = "#dashboard__viewDocumentsOnDashboard")
     private WebElementFacade documentsContainer;
 
-    @FindBy(css = ".card-content .material-icons")
-    private WebElementFacade threeDotsButton;
+    @FindBy(xpath = "//*[@id='panel_resizable_0_4']//span/i")
+    private WebElementFacade threeDotsButtonEmplDestr;
+
+    @FindBy(xpath = "//*[@id='panel_resizable_0_5']//span/i")
+    private WebElementFacade threeDotsButtonLeaveTaken;
+
+//    @FindBy(css = ".card-content .material-icons")
+//    private List<WebElementFacade> threeDotsButtonAll;
+
 
     @FindBy(css = "#task-list-group-panel-menu_holder-legend")
     private WebElementFacade employeeLegend;
