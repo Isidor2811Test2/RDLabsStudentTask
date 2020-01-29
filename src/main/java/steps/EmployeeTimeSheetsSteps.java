@@ -25,9 +25,9 @@ public class EmployeeTimeSheetsSteps extends DefaultStepsData {
     @Step
     public String getTextFromAutoCompleteNameField() {
         String text = employeeTimeSheetsPage.getEmployeeNameAutoCompleteElement().withTimeoutOf(Duration.ofSeconds(5)).waitUntilVisible().getText();
-        text.trim();
-        System.out.println(text + "Hello");
+        String name = text.substring(0, text.length() - 5);
+        System.out.println(name + "Hello");
         getDriver().switchTo().defaultContent();
-        return text;
+        return name;
     }
 }
