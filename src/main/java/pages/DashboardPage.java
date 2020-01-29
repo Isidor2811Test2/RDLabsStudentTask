@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.support.FindAll;
+
+import java.util.List;
 
 @Getter
 @Slf4j

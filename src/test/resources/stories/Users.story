@@ -9,7 +9,7 @@ And I login to application with username 'admin' and password 'admin123'
 And I go to Users page
 
 Scenario: AC-1 Check corectness of filtering #1
-Meta: @regression
+Meta: @
 When I open filter users window
 And filter users by Employee Name Alice Duval
 And I click on the Search button in Filter Users window

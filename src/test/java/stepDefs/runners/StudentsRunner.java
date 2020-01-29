@@ -1,4 +1,9 @@
 package stepDefs.runners;
 
-public class StudentsRunner {
+import net.serenitybdd.jbehave.annotations.Metafilter;
+
+@Metafilter("+newTask")
+public class StudentsRunner extends BaseRunnerConfiguration {
+
 }
+

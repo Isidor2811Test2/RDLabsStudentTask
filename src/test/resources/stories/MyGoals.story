@@ -9,12 +9,12 @@ And I login to application with username 'admin' and password 'admin123'
 And I go to My Goals page
 
 Scenario: AC-1 Check that No Records Found message is shown after going to Unapproved section in My Goals page
-Meta: @regression
+Meta: @
 When I click on Unapproved Goals button
 Then No Records Found message is shown on the page
 
 Scenario: AC-2 Check that Add Goals and Add Objective buttons become visible after howering over Add Button
-Meta: @
+Meta: @debug
 When I hover mouse over Add button
 Then Add Goals button become visible
 And Add Objective button become visible
