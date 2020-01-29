@@ -25,8 +25,20 @@ public class EmployeeTimeSheetsSteps extends DefaultStepsData {
     @Step
     public String getTextFromAutoCompleteNameField() {
         String text = employeeTimeSheetsPage.getEmployeeNameAutoCompleteElement().withTimeoutOf(Duration.ofSeconds(5)).waitUntilVisible().getText();
-        String name = text.substring(0, text.length() - 5);
+//String employeeId = employeeTimeSheetsPage.getEmployeeId().getText();
+//        System.out.println(employeeId + "ffegregregjreogjregjrgj test");
+//        String name = text.substring(0, text.length() - 5);
         getDriver().switchTo().defaultContent();
-        return name;
+        return extractName(text);
+    }
+
+    String extractName(String text) {
+        if(text.contains("[")) {
+            int end = text.indexOf("[");
+            String name = text.substring(0, end-1);
+            return name;
+        } else {
+            return text;
+        }
     }
 }

@@ -9,7 +9,7 @@ And I login to application with username 'admin' and password 'admin123'
 When I go to My Info page
 
 Scenario: AC-1 Check that Smoker checkBox is not checked by default
-Meta: @
+Meta: @regression
 Then check box Smoker is not checked
 
 Scenario: AC-2 Check value in Date of Birth field is not saved after refresh page without clicking on Save button
@@ -20,7 +20,7 @@ And refresh page
 Then Date of Birth field contains old date (date from session)
 
 Scenario: AC-3 Check that all countries in Nationality select order by name asc
-Meta: @
+Meta: @regression
 Then I check that all countries in Nationality select box ordered by name asc
 
 !-- TODO implement this scenario

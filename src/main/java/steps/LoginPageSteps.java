@@ -34,4 +34,17 @@ public class LoginPageSteps extends DefaultStepsData {
     public List<String> getAllUsersRolesFromDropDown() {
         return loginPage.getUserRoles().stream().map(WebElementFacade::getText).collect(Collectors.toList());
     }
+
+    @Step
+    public String getDefaultUsername() {
+        String defaultUsername = loginPage.getDefaultLoginName().getValue();
+        return defaultUsername;
+    }
+
+    @Step
+    public String getinvalidCredsMessage() {
+        String invalidCredsMessage = loginPage.getInvalidCredsPopup().waitUntilVisible().getText();
+        String invalidCredMessage = invalidCredsMessage.substring(2, invalidCredsMessage.length());
+        return invalidCredMessage;
+    }
 }
