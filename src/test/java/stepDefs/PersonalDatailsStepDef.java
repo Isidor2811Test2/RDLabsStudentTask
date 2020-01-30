@@ -9,7 +9,8 @@ import steps.PersonalDetailsSteps;
 
 import java.util.List;
 
-import static utils.DateUtils.DATEPATTERN_US1;
+import static org.junit.Assert.assertTrue;
+import static utils.DateUtils.DATEPATTERN_DAY_OF_WEEK;
 import static utils.DateUtils.getDateInFutureOrPastFromNow;
 import static utils.SessionVariables.DATE_OF_BIRTH;
 
@@ -26,7 +27,7 @@ public class PersonalDatailsStepDef extends DefaultStepsData {
     @When("I change Date of Birth added 1 day to old date")
     public void changeDateOfBirth() {
         String currentDate = personalDetailsSteps.getValueFromDateOfBirthField();
-        String updatedDate = getDateInFutureOrPastFromNow(DATEPATTERN_US1, 1, currentDate);
+        String updatedDate = getDateInFutureOrPastFromNow(DATEPATTERN_DAY_OF_WEEK, 1, currentDate);
         personalDetailsSteps.enterDateIntoDateBirthField(updatedDate);
     }
 
@@ -42,4 +43,16 @@ public class PersonalDatailsStepDef extends DefaultStepsData {
         boolean isSorted = Ordering.natural().isOrdered(optionsFromNationalitySelect);
         softly.assertThat(isSorted).as("Wrong ordering inside select box").isTrue();
     }
+
+//    @When("I set Male radio button checked under Gender label")
+//    public void selectRadioButton() {
+//        personalDetailsPage.clickOnMaleRadioButton();
+//        assertTrue(personalDetailsPage.getMaleRadioButton().isCurrentlyEnabled());
+//    }
+//
+//    @Then("Female radio button is unchecked")
+//    public void checkRadioButtonIsUnable() {
+//        assertTrue(personalDetailsPage.getFemaleRadioButton().isDisabled());
+//
+//    }
 }

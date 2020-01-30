@@ -21,7 +21,7 @@ public class MyGoalsSteps extends DefaultStepsData {
 
     @Step
     public String getUnapprovedGoalsInfoMessageText() {
-        return myGoalsPage.getUnapprovedGoalsInfoMessage().getText();
+        return myGoalsPage.getUnapprovedGoalsInfoMessage().waitUntilVisible().getText();
     }
 
     @Step

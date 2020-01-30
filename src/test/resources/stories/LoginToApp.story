@@ -42,7 +42,7 @@ Then I check that following social-media buttons are visible:
 | linkedin            |
 
 Scenario: AC-6 Check that text "admin" is shown by default on login page in user name field
-Meta: @DonenewTask
+Meta: @newTask
 Then I check that default value in Username field is admin
 
 Scenario: AC-7 Check that pop up messege with text 'Invalid Credentials' is shown after login with invalid credentials
