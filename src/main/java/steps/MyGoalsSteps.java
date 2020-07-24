@@ -21,7 +21,7 @@ public class MyGoalsSteps extends DefaultStepsData {
 
     @Step
     public String getUnapprovedGoalsInfoMessageText() {
-        return myGoalsPage.getUnapprovedGoalsInfoMessage().getText();
+        return myGoalsPage.getUnapprovedGoalsInfoMessage().waitUntilVisible().getText();
     }
 
     @Step
@@ -38,6 +38,7 @@ public class MyGoalsSteps extends DefaultStepsData {
                 break;
             case "Add Objective":
                 isButtonVisible = myGoalsPage.getAddObjectiveButton().isVisible();
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + buttonName);
         }

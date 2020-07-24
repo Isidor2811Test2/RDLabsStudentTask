@@ -57,7 +57,7 @@ public abstract class BasePage extends PageObject {
     public void refreshPage() {
         log.info("Refreshing page...");
         getDriver().navigate().refresh();
-        waitUntilSpinnerGone(5);
+        waitUntilSpinnerGone(15);
     }
 
     public void moveToElement(WebElement element, WebDriver driver) {
@@ -76,7 +76,7 @@ public abstract class BasePage extends PageObject {
     }
 
     public WebElementFacade getPopUpElement() {
-        return withTimeoutOf(Duration.ofSeconds(10)).waitFor(popUpElement);
+        return withTimeoutOf(Duration.ofSeconds(15)).waitFor(popUpElement);
     }
 
 
