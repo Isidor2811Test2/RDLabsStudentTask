@@ -19,6 +19,7 @@ public class EmployeeTimeSheetsSteps extends DefaultStepsData {
         employeeTimeSheetsPage.getSearchInputField().clear();
         log.info("Searching by name: " + name);
         employeeTimeSheetsPage.getSearchInputField().sendKeys(name);
+//        some changes
     }
 
 
