@@ -1,6 +1,7 @@
 package driverFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.Getter;
 import net.thucydides.core.webdriver.DriverSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //https://github.com/serenity-bdd/serenity-documentation/blob/master/src/asciidoc/advanced-webdriver.adoc
 
 public class DriverManager implements DriverSource {
-
+@Getter
     private WebDriver driver;
 
     public WebDriver newDriver() {
@@ -22,5 +23,6 @@ public class DriverManager implements DriverSource {
 
     public boolean takesScreenshots() {
         return true;
+        
     }
 }

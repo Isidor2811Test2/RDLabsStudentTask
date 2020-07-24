@@ -26,11 +26,19 @@ public class LoginPage extends BasePage {
     @FindBy(css = "#spanMessage")
     private WebElementFacade emptyFieldErrorMessage;
 
-    @FindBy(xpath = "//li[@class='dropdown-menu']//li//a")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']//li//a")
     private List<WebElementFacade> userRoles;
 
-    @FindBy(css = ".outer .hidden-md")
+    @FindBy(xpath = "//*[@id='paneContainer']/div/div[1]/div[3]/div[1]")
     private WebElementFacade socialMediaContainer;
+
+    @FindBy(css = "#txtUsername.form-control")
+    private WebElementFacade defaultLoginName;
+
+    @FindBy(css = "#toast-container")
+    private WebElementFacade invalidCredsPopup;
+
+
 
     public void enterUserName(String userName) {
         log.info("Login to app with userName " + userName);
@@ -53,5 +61,4 @@ public class LoginPage extends BasePage {
         log.info("Clicking on the [Login as a Different Role] button");
         loginAsDifferentRoleButton.waitUntilVisible().waitUntilClickable().click();
     }
-
-}
+       }

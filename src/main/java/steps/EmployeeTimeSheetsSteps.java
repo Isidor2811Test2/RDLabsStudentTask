@@ -1,8 +1,10 @@
 package steps;
 
+
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.thucydides.core.annotations.Step;
+
 
 import java.time.Duration;
 
@@ -12,14 +14,22 @@ public class EmployeeTimeSheetsSteps extends DefaultStepsData {
 
     @Step
     public void searchByEmployeeName(String name) {
+        getDriver().switchTo().frame(0);
         employeeTimeSheetsPage.getSearchInputField().waitUntilEnabled().click();
         employeeTimeSheetsPage.getSearchInputField().clear();
         log.info("Searching by name: " + name);
         employeeTimeSheetsPage.getSearchInputField().sendKeys(name);
+//        some changes
     }
+
 
     @Step
     public String getTextFromAutoCompleteNameField() {
-        return employeeTimeSheetsPage.getEmployeeNameAutoCompleteElement().withTimeoutOf(Duration.ofSeconds(5)).waitUntilVisible().getText();
+        String text = employeeTimeSheetsPage.getEmployeeNameAutoCompleteElement().withTimeoutOf(Duration.ofSeconds(5)).waitUntilVisible().getText();
+        String name = text.substring(0, text.indexOf("\n"));
+        getDriver().switchTo().defaultContent();
+        return name;
+//rgagg
+
     }
 }

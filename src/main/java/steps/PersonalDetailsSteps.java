@@ -1,5 +1,6 @@
 package steps;
 
+import emuns.ItemsContainer;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 
