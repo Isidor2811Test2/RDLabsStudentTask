@@ -23,5 +23,6 @@ public class DriverManager implements DriverSource {
 
     public boolean takesScreenshots() {
         return true;
+        
     }
 }
